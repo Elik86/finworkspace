@@ -1,0 +1,12 @@
+@import "projects/finfront/src/styles/colors";
+
+.sidenav {
+  height: 100%;
+  width: 20vh;
+  padding: 0 20px;
+  border-right: 1px solid $primary;
+
+  &__navigation {
+    padding: 20px 0;
+  }
+}

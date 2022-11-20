@@ -1,0 +1,16 @@
+<div class="page">
+  <div class="page__header">
+    <h1>Gallery</h1>
+  </div>
+
+  <div class="page__content">
+    <div class="gallery">
+      <span class="gallery__thumbnail" *ngFor="let photo of photos$ | async">
+        <ek-thumbnails
+          (click)="onThumbClick(photo.albumId, $event)"
+          img="{{ photo.thumbnailUrl }}"
+        ></ek-thumbnails>
+      </span>
+    </div>
+  </div>
+</div>

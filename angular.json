@@ -3,5 +3,141 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "finfront": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/finfront",
+      "sourceRoot": "projects/finfront/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/finfront",
+            "index": "projects/finfront/src/index.html",
+            "main": "projects/finfront/src/main.ts",
+            "polyfills": "projects/finfront/src/polyfills.ts",
+            "tsConfig": "projects/finfront/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/finfront/src/favicon.ico",
+              "projects/finfront/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/finfront/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/finfront/src/environments/environment.ts",
+                  "with": "projects/finfront/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "finfront:build:production"
+            },
+            "development": {
+              "browserTarget": "finfront:build:development"
+            }
+          },
+          "options": {
+            "proxyConfig": "projects/finfront/src/proxy.conf.json"
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "finfront:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/finfront/src/test.ts",
+            "polyfills": "projects/finfront/src/polyfills.ts",
+            "tsConfig": "projects/finfront/tsconfig.spec.json",
+            "karmaConfig": "projects/finfront/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/finfront/src/favicon.ico",
+              "projects/finfront/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/finfront/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "thumbnails": {
+      "projectType": "library",
+      "root": "projects/thumbnails",
+      "sourceRoot": "projects/thumbnails/src",
+      "prefix": "ek",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/thumbnails/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/thumbnails/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/thumbnails/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/thumbnails/src/test.ts",
+            "tsConfig": "projects/thumbnails/tsconfig.spec.json",
+            "karmaConfig": "projects/thumbnails/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }

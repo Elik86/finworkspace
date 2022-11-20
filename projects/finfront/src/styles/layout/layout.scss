@@ -1,0 +1,13 @@
+.layout {
+  width: 100%;
+  height: 100%;
+  background: $base;
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}

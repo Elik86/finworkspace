@@ -1,0 +1,13 @@
+<div class="page">
+  <div class="page__header">
+    <h1>Posts</h1>
+  </div>
+
+  <div class="page__content">
+    <div class="posts">
+      <ng-container *ngFor="let post of posts$ | async">
+        <div>{{ post.title }}</div>
+      </ng-container>
+    </div>
+  </div>
+</div>

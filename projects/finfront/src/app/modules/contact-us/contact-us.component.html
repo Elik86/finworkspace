@@ -1,0 +1,31 @@
+<div class="page">
+  <div class="page__header">
+    <h1>Contact Us</h1>
+  </div>
+
+  <div class="page__content">
+    <form
+      [formGroup]="form"
+      novalidate
+      autocomplete="off"
+      (ngSubmit)="onSubmit()"
+    >
+      <app-form-field label="Full name" [control]="form.controls['fullname']"
+        ><app-input formControlName="fullname"></app-input
+      ></app-form-field>
+      <app-form-field
+        label="Email"
+        [control]="form.controls['email']"
+        [patternError]="regexErrors.email"
+        ><app-input formControlName="email"></app-input
+      ></app-form-field>
+      <app-form-field
+        label="Phone Number"
+        [control]="form.controls['phone_number']"
+        [patternError]="regexErrors.phone"
+        ><app-input formControlName="phone_number"></app-input
+      ></app-form-field>
+      <app-button type="submit">Submit</app-button>
+    </form>
+  </div>
+</div>

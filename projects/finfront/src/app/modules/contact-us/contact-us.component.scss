@@ -1,0 +1,10 @@
+@import "projects/finfront/src/styles/colors";
+
+.page {
+  background-color: $contact-background;
+  padding: 20px 20px;
+}
+
+:host {
+  flex-grow: 1;
+}

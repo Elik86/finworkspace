@@ -1,0 +1,17 @@
+@import "projects/finfront/src/styles/colors";
+
+.page {
+  background-color: $home-background;
+  padding: 20px 20px;
+  overflow: auto;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}
+
+:host {
+  flex-grow: 1;
+}
