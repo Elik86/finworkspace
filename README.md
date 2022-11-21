@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Run the evn
 
-run the enviroment with "ng serve finfront" - for the frontend app
+run the enviroment with "ng serve finfront" - for the frontend app<br />
 run the library with "ng build --watch"
 
 ## Regexes
