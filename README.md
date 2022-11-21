@@ -9,15 +9,15 @@ run the library with "ng build --watch"
 
 ## Regexes
 
-These are the test ukranina phone numbers i used for the regex
+These are the test ukranian phone numbers i used for the regex
 
-+380445371428
-+38(044)5371428
-+38(044)537 14 28
-+38(044)537-14-28
-+38(044) 537.14.28
-044.537.14.28
-0445371428
-044-537-1428
-(044)537-1428
-044 537-1428
++380445371428<br />
++38(044)5371428<br />
++38(044)537 14 28<br />
++38(044)537-14-28<br />
++38(044) 537.14.28<br />
+044.537.14.28<br />
+0445371428<br />
+044-537-1428<br />
+(044)537-1428<br />
+044 537-1428<br />
