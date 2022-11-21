@@ -1,0 +1,12 @@
+.posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0 35px;
+
+  &__card {
+    display: flex;
+    padding: 1rem;
+  }
+}

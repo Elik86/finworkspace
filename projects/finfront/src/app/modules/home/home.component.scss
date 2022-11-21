@@ -9,7 +9,11 @@
 .home {
   display: flex;
   flex-direction: row;
-  justify-items: center;
+  justify-content: space-evenly;
+
+  &__content {
+    width: 60vh;
+  }
 }
 
 :host {

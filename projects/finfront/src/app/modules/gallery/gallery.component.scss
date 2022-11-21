@@ -9,20 +9,3 @@
 :host {
   flex-grow: 1;
 }
-
-.gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding: 0 35px;
-
-  &__thumbnail {
-    display: flex;
-    padding: 1rem;
-
-    :hover {
-      transform: scale(1.1);
-    }
-  }
-}

@@ -9,10 +9,12 @@ import { Post } from '../../models/backend';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  posts$!: Observable<Post[]>;
+  // posts$!: Observable<Post[]>;
+
+  posts!: Post[];
 
   constructor(private postService: PostService) {
-    this.posts$ = this.postService.getPosts();
+    this.postService.getPosts().subscribe((res) => (this.posts = res));
   }
 
   ngOnInit(): void {}

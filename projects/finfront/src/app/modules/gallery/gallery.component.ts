@@ -9,16 +9,19 @@ import { Photo } from '../../models/backend';
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-  photos$!: Observable<Photo[]>;
+  // photos$!: Observable<Photo[]>;
+
+  photos!: Photo[];
 
   constructor(private galleryService: GalleryService) {}
 
   ngOnInit(): void {
-    this.photos$ = this.galleryService.getPhotos();
+    this.galleryService.getPhotos().subscribe((res) => (this.photos = res));
   }
 
-  onThumbClick(albumId: number, e: Event) {
-    console.log(e.target);
-    alert('clicked me! ' + albumId);
+  onThumbClick(photo: Photo): void {
+    this.galleryService
+      .getAlbum(photo.albumId)
+      .subscribe((res) => (this.photos = res));
   }
 }

@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ContactUsRoutingModule } from './contact-us-routing.module';
 import { ContactUsComponent } from './contact-us.component';
 
+// Load only the modules that we use from shared folder
 import {
   ButtonsModule,
   ControlsModule,

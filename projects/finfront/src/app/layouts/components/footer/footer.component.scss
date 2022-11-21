@@ -7,8 +7,11 @@
   border-top: 0.5px solid $primary;
 
   &__navigation {
-    display: inline-flex;
-    align-items: center;
-    align-content: center;
+    padding: 20px 0;
   }
+}
+
+:host ::ng-deep app-navlinks {
+  display: flex;
+  justify-content: center;
 }

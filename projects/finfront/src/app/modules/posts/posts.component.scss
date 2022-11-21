@@ -4,6 +4,10 @@
   background-color: $post-background;
   padding: 20px 20px;
   overflow: auto;
+
+  &__content {
+    width: 80vh;
+  }
 }
 
 :host {

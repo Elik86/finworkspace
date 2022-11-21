@@ -1,0 +1,9 @@
+<div class="gallery">
+  <span class="gallery__thumbnail" *ngFor="let photo of photos">
+    <ek-thumbnails
+      img="{{ photo.thumbnailUrl }}"
+      (click)="onPhotoPress(photo)"
+    ></ek-thumbnails>
+  </span>
+</div>
+<!-- (click)="onThumbClick(photo.albumId, $event)" -->

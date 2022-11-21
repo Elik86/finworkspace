@@ -4,13 +4,11 @@
   </div>
 
   <div class="page__content">
-    <div class="gallery">
-      <span class="gallery__thumbnail" *ngFor="let photo of photos$ | async">
-        <ek-thumbnails
-          (click)="onThumbClick(photo.albumId, $event)"
-          img="{{ photo.thumbnailUrl }}"
-        ></ek-thumbnails>
-      </span>
-    </div>
+    <app-photo-gallery
+      [photos]="photos"
+      (photoPressed)="onThumbClick($event)"
+    ></app-photo-gallery>
   </div>
 </div>
+
+<!-- [photos]="photos$ | async" -->

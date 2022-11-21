@@ -10,8 +10,11 @@ import { Photo, Post } from '../../models/backend';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  posts$!: Observable<Post[]>;
-  photos$!: Observable<Photo[]>;
+  // posts$!: Observable<Post[]>;
+  // photos$!: Observable<Photo[]>;
+
+  posts!: Post[];
+  photos!: Photo[];
 
   constructor(
     private galleryService: GalleryService,
@@ -19,14 +22,12 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.posts$ = this.postService.limitedPosts;
+    this.galleryService.getLimitedPhotos().subscribe((res) => {
+      this.photos = res;
+    });
 
-    // const allPosts$ = this.postService.getPosts();
-    // const allPhotos$ = this.galleryService.getPhotos();
-
-    this.posts$ = this.postService.getPosts().pipe(map((x) => x.slice(0, 10)));
-    this.photos$ = this.galleryService
-      .getPhotos()
-      .pipe(map((x) => x.slice(0, 10)));
+    this.postService.getLimitedPosts().subscribe((res) => {
+      this.posts = res;
+    });
   }
 }

@@ -1,4 +1,6 @@
 /* tslint:disable:max-line-length */
+
+// regexes to check if email is correct + to check if the provided phone number is ukranian
 export const regex = {
   email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
   phone:

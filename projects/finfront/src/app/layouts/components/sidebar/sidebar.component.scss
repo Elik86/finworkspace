@@ -10,3 +10,8 @@
     padding: 20px 0;
   }
 }
+
+:host ::ng-deep app-navlinks {
+  display: flex;
+  flex-direction: column;
+}

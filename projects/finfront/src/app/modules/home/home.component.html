@@ -4,21 +4,13 @@
   </div>
   <div class="page__content">
     <div class="home">
-      <div class="home__header">
-        <h1>Home</h1>
+      <div class="home__content">
+        <app-my-posts [posts]="posts"></app-my-posts>
+        <!-- <app-my-posts [posts]="posts$ | async"></app-my-posts> -->
       </div>
-      <div class="home__posts">
-        <ng-container *ngFor="let post of posts$ | async">
-          <div>{{ post.title }}</div>
-        </ng-container>
-      </div>
-      <div class="home__header">
-        <h1>Home</h1>
-      </div>
-      <div class="home__photos">
-        <ng-container *ngFor="let photo of photos$ | async">
-          <div>{{ photo.thumbnailUrl }}</div>
-        </ng-container>
+      <div class="home__content">
+        <app-photo-gallery [photos]="photos"></app-photo-gallery>
+        <!-- <app-photo-gallery [photos]="photos$ | async"></app-photo-gallery> -->
       </div>
     </div>
   </div>
