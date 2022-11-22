@@ -4,8 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Run the evn
 
-1. Run "ng build thumbnails" to build the library<br />
-2. Run "ng serve" to run the project<br />
+1. Run "yarn install" ( if you want npm - delete yarn.lock file and "npm install")<br />
+2. Run "ng build thumbnails" to build the library<br />
+3. Run "ng serve" to run the project<br />
 
 ## Regexes
 
